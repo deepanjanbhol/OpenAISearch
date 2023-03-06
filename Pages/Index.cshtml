@@ -1,0 +1,39 @@
+﻿@page
+@model IndexModel
+<div class="text-left">
+    <p>
+        <form id="search">
+            <input type="search" id="q" placeholder="Search..." asp-for="Search" autofocus style="width: 400px" />
+            <button id ="search-btn" type="submit" style="background-color:blue; color:white">Search</button>
+        </form>
+    </p>
+    <div id="loading-icon" style="display: none;">
+        <img src="loading.gif" alt="Loading..." />
+        <span>Loading...</span>
+    </div>
+</div>
+
+<div id="search-results">
+@if (Model.SearchResults?.CrossDocumentSummary != null)
+{
+    <div class="text-left">
+        <p><b>@Model.SearchResults.CrossDocumentSummary</b></p>
+    </div>
+}
+
+<div class="text-left">
+    @if (Model.SearchResults != null)
+    {
+        <div> <p>Related Documents</p> </div>
+        <ul>
+            @foreach (var r in Model.SearchResults.Documents)
+            {
+                <li>
+                    <a href=".">@r.Title</a>
+                    <p style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical;">@r.Content</p>
+                </li>
+            }
+        </ul>
+    }
+</div>
+</div>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenAISearchScenarios", "OpenAISearchScenarios.csproj", "{BAA20B6A-D902-46EE-88B6-4DF35A8E8F5D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BAA20B6A-D902-46EE-88B6-4DF35A8E8F5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAA20B6A-D902-46EE-88B6-4DF35A8E8F5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAA20B6A-D902-46EE-88B6-4DF35A8E8F5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAA20B6A-D902-46EE-88B6-4DF35A8E8F5D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1AE1AD05-6D11-42B0-A9CD-F4066D335240}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,190 @@
+,title,heading,content,tokens
+0,What is Microsoft Power Platform CLI?,Summary,"Microsoft Power Platform CLI is a simple, one-stop developer CLI that empowers developers and ISVs to perform various operations in Microsoft Power Platform related to environment lifecycle, authentication, and work with Microsoft Dataverse environments, solution packages, portals, code components, and more.
+Microsoft Power Platform CLI is available for use in the GCC and GCC High (US Sovereign cloud) regions. See the --cloud parameter for the pac auth create command to find out about supported US Sovereign cloud environments.",98
+1,What is Microsoft Power Platform CLI?,Install Microsoft Power Platform CLI,"You can install Microsoft Power Platform CLI using either or both of the following:
+
+|Installation Method |Description|
+|---------|---------|
+|[Install using Power Platform Tools for Visual Studio Code](#install-using-power-platform-tools-for-visual-studio-code)|Enables use of commands within a PowerShell terminal within Visual Studio Code on Windows 10, Windows 11, Linux, and MacOS.|
+|[Install Power Platform CLI for Windows](#install-power-platform-cli-for-windows)|Enables use of commands using PowerShell for Windows 10 and Windows 11. <br /> Certain commands, such as [pac data](reference/data.md), are only available using Power Platform CLI for Windows|",154
+2,What is Microsoft Power Platform CLI?,Install using Power Platform Tools for Visual Studio Code,"Follow these steps to install Microsoft Power Platform CLI using Visual Studio Code.
+
+1. Open [Visual Studio Code](https://code.visualstudio.com/).
+1. Select the **Extensions** icon from the **Activity** panel. In the search bar, enter **Power Platform Tools**.
+1. Select **Install**. Once the installation is finished, restart Visual Studio Code to see the extension within the **Terminal** window.
+
+   :::image type=""content"" source=""media/power-platform-vs-code-extension-install.png"" alt-text=""VS Code extension install"":::
+
+   > [!NOTE]
+   > Power Platform Tools for Visual Studio Code updates automatically.
+
+1. Optionally, you can initiate the install into Visual Studio Code directly from [Marketplace]( https://aka.ms/ppcvscode) and it will launch Visual Studio Code and commence the extension installation.
+
+   :::image type=""content"" source=""media/marketplace-install.png"" alt-text=""Launch install from Marketplace"":::
+
+You can also do a side-load install into Visual Studio Code by downloading the extension from the [Marketplace](https://aka.ms/ppcvscode).",268
+3,What is Microsoft Power Platform CLI?,Side-load install of Power Platform Tools for Visual Studio Code,"In some organizations, downloading or initiating an install over the web is prohibited. Most cases, the organization download the installation media and stores it in a secure location and verify that it is working according to their standards, before it is distributed within the organization. Use the following instructions to support this type of installation.
+
+1. Go to the [Marketplace](https://aka.ms/ppcvscode) and instead of pressing the **Install** button, click the **Download Extension** link under **Resources**.
+
+   :::image type=""content"" source=""media/side-load-install-1.png"" alt-text=""Download the extension"":::
+
+   This is will download a file with a .vsix extension on to your workstation.
+
+   :::image type=""content"" source=""media/side-load-install-2.png"" alt-text=""Downloaded extension"":::
+
+1. Launch Visual Studio Code and select the **Extensions** icon, select the ellipsis on the **Extensions** side bar, and then select **Install from VSIX**.
+
+   :::image type=""content"" source=""media/side-load-install-3.png"" alt-text=""Install from VSIX"":::",267
+4,What is Microsoft Power Platform CLI?,Successful installation,"Once the installation is successful, you will need to restart Visual Studio Code, upon which you will see the following notification.
+
+:::image type=""content"" source=""media/installation-success-1.png"" alt-text=""Install notification"":::
+
+On the **Activity** bar. you'll notice the icon for the Power Platform Tools.
+
+:::image type=""content"" source=""media/installation-success-3.png"" alt-text=""icon"":::
+
+The final check would be to launch the terminal window and type `pac`.
+
+:::image type=""content"" source=""media/installation-success-2.png"" alt-text=""PAC CLI in the terminal window"":::",154
+5,What is Microsoft Power Platform CLI?,Uninstall Power Platform Tools for Visual Studio Code,"To uninstall Power Platform Tools for Visual Studio Code, follow the same steps as installing the extension, except this time select the **Uninstall** button.",30
+6,What is Microsoft Power Platform CLI?,Install Power Platform CLI for Windows,"To install Power Platform CLI for Windows, download and run the .msi file found here: [Microsoft Power Platform CLI](https://aka.ms/PowerAppsCLI) and choose the **Install** option.",44
+7,What is Microsoft Power Platform CLI?,Update Power Platform CLI for Windows,"To take advantage of all the latest capabilities, update Microsoft Power Platform CLI tooling to the latest version by using this command:
+
+```dotnetcli
+pac install latest
+```
+
+> [!NOTE]
+> `pac install latest` command is not applicable for Power Platform Tools for Visual Studio Code. It will look for updates and update automatically each time you open Visual Studio Code.",82
+8,What is Microsoft Power Platform CLI?,Uninstall Power Platform CLI for Windows,"To uninstall Power Platform CLI for Windows, download and run the .msi from [Microsoft Power Platform CLI](https://aka.ms/PowerAppsCLI) and choose the **Remove** option.",41
+9,What is Microsoft Power Platform CLI?,Common commands,"This table lists some of the common commands used in the PAC CLI.
+
+|Command|Description|
+|-------|-----------|
+|[pac admin](reference/admin.md)|Commands for environment lifecycle features.|
+|[pac auth](reference/auth.md)|Commands to [connect to your environment](/power-apps/developer/component-framework/import-custom-controls#connecting-to-your-environment).|
+|[pac application](reference/application.md)| Commands to install AppSource applications that are pre-requisites for the solution work in the target environment (Preview). |
+|[pac canvas](reference/canvas.md)|Commands for working with canvas app source files (Preview).|
+|[pac org](reference/org.md)|Commands for working with Dataverse environments.|
+|[pac package](reference/package.md)|Commands for working with [solution packages](../../alm/package-deployer-tool.md).|
+|[pac paportal](reference/paportal.md)|Commands for working with [Portals support for Microsoft Power Platform CLI](/power-apps/maker/portals/power-apps-cli).|
+|[pac pcf](reference/pcf.md)|Commands for working with [Power Apps component framework](/power-apps/developer/component-framework/overview).|
+|[pac plugin](reference/plugin.md)|Command to create a [plug-in](/power-apps/developer/data-platform/plug-ins) project.|
+|[pac solution](reference/solution.md)|Commands for working with [Dataverse solution projects](/power-apps/maker/data-platform/solutions-overview).|
+|[pac telemetry](reference/telemetry.md)|Manages the telemetry settings.|
+
+> [!TIP]
+> For the complete list of supported commands, see [Microsoft Power Platform CLI Command Groups](reference/index.md) or  run the `pac` command or `pac` \<subcommand> - for example: `pac solution`.",468
+10,Create a developer environment,Summary,"The simplest way to get access to a Power Platform environment is to sign up for the Power Apps Developer plan. You can explore Power Platform at full potential for learning at no cost.
+
+To fully use it as a developer, you'll need an Azure account and a work account. This article will guide you through the process for creating a Power Platform environment and a test tenant if needed.",78
+11,Create a developer environment,Where do I start?,"If you have a work account, and want to use it to learn Power Platform, go to the next section.
+
+If you don't have a work account or prefer a Sandbox tenant to learn Power Platform, read information in the create a test tenant section later in this article before signing up for the developer environment.",65
+12,Create a developer environment,Sign up for the Power Apps Developer Plan,"The Power Apps Developer Plan gives you a free development environment to build and test with Power Apps, Power Automate, and Microsoft Dataverse.
+
+It's simple to sign up for the Power Apps Developer Plan:
+
+1. Ensure that you have a work account. If you don't, [create a test tenant](#how-to-create-a-test-tenant) first.
+2. Sign up on the [Power Apps Developer Plan website](https://aka.ms/PowerAppsDevPlan).
+
+    :::image type=""content"" source=""media/create-developer-environment-devplan-signup.png"" alt-text=""Sign-up for the developer plan"":::
+
+    After signing up for the Developer Plan, you'll be redirected to [Power Apps](https://make.powerapps.com). The environment will be shown with your name, for example ""John Doe's environment."" If there's already an environment with that name, the developer new environment will be named ""John Doe's (1) environment.""
+
+    :::image type=""content"" source=""media/create-developer-environment-makerportal.png"" alt-text=""Power Apps"":::
+
+> [!IMPORTANT]
+>
+> - Use the developer environment instead of your tenant's default environment to work with certain capabilities such as premium and custom connectors.
+> - You might need to select your developer environment from the top-right corner of the screen in Power Apps.
+> - It might take a couple of minutes for the new environment to be provisioned and become available in the list of the environments. You can see the progress of the environment creation in the [Power Platform admin center](https://admin.powerplatform.com).
+> - In some situations, your admin might have turned off the sign up process. In this case, please contact your administrator, or create a test tenant.
+> ![Viral Blocked.](media/create-developer-environment-viralblocked.png ""Viral Blocked"")
+
+For detailed information about the developer plan, go to [Sign up for the Power Apps Developer Plan](/power-apps/maker/developer-plan).",472
+13,Create a developer environment,How to create a test tenant?,"If you don't already have a dedicated test tenant, you can create one for free by using the Microsoft 365 Developer Program or manually create one yourself.
+
+The [Microsoft 365 Developer Program](/office/developer-program/microsoft-365-developer-program) is free and can have test user accounts and sample data packs automatically added to the tenant.
+
+You'll need a work account or a microsoft account to sign up. Use either your personal email address or set up a separate email address/Microsoft account to be used when you start the registration process for the Microsoft 365 Developer Program.
+
+1. Go to [Join the Microsoft 365 Developer Program page](https://developer.microsoft.com/en-us/microsoft-365/dev-program).
+2. In the upper-right corner, select **Sign in** to sign in with your Microsoft account or Azure Active Directory-enabled email.
+3. After signing in, select **Join now**.
+4. On the Microsoft 365 Developer Program Signup page, complete the following fields in the online form:
+    - Country/Region
+    - Company
+    - Language preference
+5. Review the terms and conditions. You'll need to select the checkbox before you can join.
+6. Optionally, select the **I would like to hear from the Microsoft 365 Developer Program** checkbox if you want to hear from Microsoft about new capabilities and other updates.
+7. Select **Next**.
+    
+    :::image type=""content"" source=""media/create-developer-environment-m365-signup.png"" alt-text=""Sign-up for the Microsoft 365 Developer Program"":::
+    
+8. On the Microsoft 365 Developer Program Preferences page, let us know your preferences so we can personalize your experience, including:
+    - The industry that you work in.
+    - The type of applications or solutions that you're interested in developing.
+    - Products, technologies, and programming languages that you're interested in.
+9. Select **Join**. Your preferences appear on the next page in the top right, and you will see a welcome message and will receive a welcome email.
+10. Set up a Microsoft 365 developer sandbox to build your solutions independent of your production environment.
+
+You can also [manually create a test tenant](/azure/active-directory/develop/quickstart-create-new-tenant).
+
+Now that you have your test tenant, sign up for the Power Apps Developer Plan as explained earlier in this article.",554
+14,Fusion development in Power Platform,Summary,"Fusion development or fusion teams development, is defined by Gartner as ""distributed and multidisciplinary digital business teams that blend technology and other types of domain expertise."" (Source: 2019 Gartner Digital Business Teams Survey).Fusion Development is an approach with the main goal of scaling application development through low-code. Fusion development allows your business to build better applications, faster by bringing together professional developers with citizen, or low-code, developers. It can also mean using low-code capabilities and combine them with code-first components to meet business needs and create Fusion applications.",118
+15,Fusion development in Power Platform,Personas for fusion development,"Bellow you can find the personas and the definition in a fusion team:
+
+| Persona | Description |
+| ---- | ---- | 
+| Citizen developer or maker | A business user with business knowledge looking for ways to improve a business process. Use visual, drag and drop and low code tools. Usually don't have a technical background. |
+| Professional developer or code-first developer | Pro devs use pro dev tools to accomplish pro dev tasks. For example, write code in Visual Studio or Visual Studio Code using programming languages like C# or JavaScript. |
+| IT professional or DevOps engineer | An IT professional responsible for the application lifecycle management (ALM) of business applications. |
+
+> [!IMPORTANT]
+> Our goal is to empower diverse groups of people with different skill sets and boost velocity by scaling solution development through low-code. The Microsoft Power Platform is a tool in your tool set. We want to help you work more efficiently and focus on tasks that match your desired skill level.
+
+Empowering citizen developer can enable pro developers to focus on specialized problems, avoiding simple and repetitive tasks that can be performed by the citizen developer.",243
+16,Fusion development in Power Platform,Collaboration,"Power Platform is designed to empower fusion teams allowing three key audiences to come together.
+
+![[Fusion team.](media/fusion-team.png ""Fusion team"")](media/fusion-team.png ""Fusion team"")
+
+> [!TIP]
+> Low-code and pro-dev tools should integrate smoothly to enable different groups of people to work together effectively.
+
+The role of the professional developer and IT professional is to create a secure and governed environment where citizen developer can be empowered to achieve more with minimum friction. Everyone should use citizen maker tools to accomplish citizen maker tasks. For example, pro devs use same visual tooling as citizen makers when creating apps on Power Platform.",148
+17,Introduction to Microsoft Power Platform for developers,Summary,"Microsoft Power Platform is a low-code platform for rapidly building customized end-to-end business solutions. It consists of five product areas: Power Apps, Power Automate, Power BI, Power Virtual Agents, and Power Pages. Each area can be used individually or together. United by the underlying Microsoft Dataverse technology, all areas are designed for a connected experience to achieve your business goals, whether it's creating analytics, process automation, or data-driven productivity applications.
+
+The platform's low-code approach enables everyone in an organization&mdash;from frontline workers to professional developers&mdash;to participate in the development of business solutions that drive positive business outcomes. Developers can collaborate with citizen developers to enhance business solutions and solve complex requirements by using the platform's various extension capabilities with code. Thanks to a native integration with Azure, developers can use their cloud development skills to extend Microsoft Power Platform with different Azure services. With a low-code integrated development approach, business goals can be achieved faster and frees up time for the developers.",210
+18,Introduction to Microsoft Power Platform for developers,Power Apps ,Apps created with Power Apps can be shared with internal users and can be run in a browser or on a mobile device. You can create following types of apps: canvas and model-driven.,38
+19,Introduction to Microsoft Power Platform for developers,Canvas apps,"Provides the Power Apps maker with complete control over the pixel-perfect screen contents and navigation between multiple screens. Canvas applications use different connectors to work with data and services. Canvas applications can be embedded into SharePoint, Teams, Power BI, and Dynamics 365 applications.",55
+20,Introduction to Microsoft Power Platform for developers,Canvas apps- Key developer extensibility points,"> - Build custom UI components using [Power Apps component framework](/power-apps/developer/component-framework/overview)
+> - Create [custom connectors](/connectors/custom-connectors/) to communicate to your external data sources and services. A custom connector is a wrapper around a REST API and can be created using tools like Azure Functions and Azure API Management",78
+21,Introduction to Microsoft Power Platform for developers,Model-driven apps  ,Data-driven applications that are built on top of [Microsoft Dataverse](#dataverse). Other data sources and services can be used by model-driven applications by embedding a canvas application.,39
+22,Introduction to Microsoft Power Platform for developers,Model-driven apps-Key developer extensibility points,"> - Build custom UI components using [Power Apps component framework](/power-apps/developer/component-framework/overview)
+> - Implement client business logic using [JavaScript and the client API](/power-apps/developer/model-driven-apps/client-scripting)
+> - Build [HTML web resources](/power-apps/developer/model-driven-apps/webpage-html-web-resources)",95
+23,Introduction to Microsoft Power Platform for developers,Power Automate,"Power Automate is used to automate tasks and orchestrate activities across various services that use integrated or custom connectors. Using Power Automate you can create cloud flows or desktop flows.
+
+| Type | Description |
+| ---- | ---- |
+| **Cloud flows** | Can be triggered manually, configured to run when specific events occur, such as when a record is created, or scheduled to run at a specific time. Power Automate is built on top of Azure Logic Apps but offers unique integration with Microsoft Power Platform. |
+| **Desktop flows** | Used to automate repetitive interactive tasks on the web or the desktop. |",127
+24,Introduction to Microsoft Power Platform for developers,Power Automate-Key developer extensibility points,"> - Create [custom connectors](/connectors/custom-connectors/) to communicate to your external data sources and services. A custom connector is a wrapper around a REST API and can be created using tools like Azure Functions and Azure API Management
+> - Use [workflow definition functions](/power-automate/developer/custom-cds-for-apps-workflow-activities) to build complex expressions",88
+25,Introduction to Microsoft Power Platform for developers,Power BI,Power BI is Microsoft's business analytics solution that provides interactive data visualization BI tools to help users visualize and share data and insights across their organization.,28
+26,Introduction to Microsoft Power Platform for developers,Power BI-Key developer extensibility points,"> - Embed Power BI in apps, websites, and portals
+> - Create [custom visuals](/power-bi/developer/visuals/power-bi-custom-visuals) using the open-source SDK",47
+27,Introduction to Microsoft Power Platform for developers,Power Pages,"Power Pages is a secure, enterprise-grade, low-code software as a service (SaaS) platform for creating, hosting, and administering modern external-facing business websites. Low-code makers can rapidly design, configure, and publish websites that seamlessly work across web browsers and devices. Professional developers can extend these capabilities to address advanced business requirements.",71
+28,Introduction to Microsoft Power Platform for developers,Power Pages-Key developer extensibility points,"> - Custom web page templates built with HTML, CSS, and [Liquid](/power-pages/configure/liquid-overview)
+> - Extend site integration with Dataverse with the [portals Web API](/power-pages/configure/web-api-overview)
+> - [Use Visual Studio Code and the Power Platform CLI](/power-pages/configure/cli-tutorial) to enable metadata editing and CI/CD (Continuous Integration/Continuous Deployment) of site configurations",109
+29,Introduction to Microsoft Power Platform for developers,Power Virtual Agents,"Power Virtual Agents lets you create powerful chatbots that can answer questions from your customers, other employees, or visitors to your website or service. Power Virtual Agents is built on Microsoft Bot Framework and provides a low-code experience to build and manage chatbots.",51
+30,Introduction to Microsoft Power Platform for developers,Power Virtual Agents-Key developer extensibility points,"> - Build Bot Framework Skills
+> - Extend your bots with [Bot Framework Composer](/power-virtual-agents/advanced-bot-framework-composer)",37
+31,Introduction to Microsoft Power Platform for developers,Dataverse,"Dataverse is a cloud scale data store that builds on Microsoft's data technologies and abstracts away data management complexity from the app maker. It lets you securely store and manage data that is used by business applications. Business data within Dataverse is stored within a set of data tables. Role-based security allows businesses to control access to the data tables and even individual records for different users within your organization. Developers can extend or customize Dataverse functionality by adding custom business logic. You can define calculated table columns, business rules, workflows, and business process flows to ensure data quality and drive business processes.",120
+32,Introduction to Microsoft Power Platform for developers,Dataverse-Key developer extensibility points,"> - Create [plug-ins](/power-apps/developer/data-platform/plug-ins), similar to event handlers, that customize or extend Dataverse data processing with custom business logic (code)
+> - Use [webhooks and Azure Service Bus](/power-apps/developer/data-platform/use-webhooks) to integrate with external systems
+> - Extend the Dataverse API with your own [custom API](/power-apps/developer/data-platform/custom-api) that implements your business logic
+> - Use [virtual tables](/power-apps/developer/data-platform/virtual-entities/get-started-ve) to integrate data stored in external systems into Dataverse without replicating the data",162
